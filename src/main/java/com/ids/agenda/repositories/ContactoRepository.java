@@ -3,6 +3,7 @@
  */
 package com.ids.agenda.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,7 +20,6 @@ public interface ContactoRepository extends JpaRepository<Contacto, Long>{
 	
 	Optional<Contacto> findByEmailIn(String email);
 	Optional<Contacto> findByAliasIn(String alias);
-	Optional<Contacto> findByNombreIn(String nombre);
-	
+	List<Contacto> findByNombreIn(String nombre);
 	
 }

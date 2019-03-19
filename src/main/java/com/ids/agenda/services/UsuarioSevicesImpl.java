@@ -57,8 +57,8 @@ public class UsuarioSevicesImpl implements UsuarioService{
 	}
 
 	@Override
-	public void guardaUsuario(User usuario) {
-		repository.saveAndFlush(usuario);
+	public User guardaUsuario(User usuario) {
+		return repository.saveAndFlush(usuario);
 		
 	}
 
@@ -68,8 +68,8 @@ public class UsuarioSevicesImpl implements UsuarioService{
 	}
 
 	@Override
-	public void actualizaUsuario(User usuario) {
-		repository.saveAndFlush(usuario);
+	public User actualizaUsuario(User usuario) {
+		return repository.saveAndFlush(usuario);
 	}
 }
 

@@ -13,11 +13,12 @@ import com.ids.agenda.entities.Contacto;
  */
 public interface ContactoService {
 
+	List<Contacto> consultaContactos(String nombreContacto);
 	List<Contacto> consultaContactos();
 	Contacto consultaContacto(Long contactoId);
-	void guardaContacto(Contacto contacto);
+	Contacto guardaContacto(Contacto contacto);
 	void borraContacto(Long contactoId);
-	void actualizaContacto(Contacto contacto);
+	Contacto actualizaContacto(Contacto contacto);
 	
 	Contacto validaContactoByEmail(Contacto contacto);
 	Contacto validaContactoByAlias(Contacto contacto);

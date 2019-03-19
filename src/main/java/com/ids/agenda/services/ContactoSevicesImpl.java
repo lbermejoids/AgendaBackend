@@ -40,13 +40,18 @@ public class ContactoSevicesImpl implements ContactoService{
 	}
 
 	@Override
+	public List<Contacto> consultaContactos(String nombreContacto) {
+		return repository.findByNombreIn(nombreContacto);
+	}
+	
+	@Override
 	public List<Contacto> consultaContactos() {
 		return repository.findAll();
 	}
 
 	@Override
-	public void guardaContacto(Contacto contacto) {
-		repository.saveAndFlush(contacto);
+	public Contacto guardaContacto(Contacto contacto) {
+		return repository.saveAndFlush(contacto);
 	}
 
 	@Override
@@ -55,8 +60,8 @@ public class ContactoSevicesImpl implements ContactoService{
 	}
 
 	@Override
-	public void actualizaContacto(Contacto contacto) {
-		repository.saveAndFlush(contacto);
+	public Contacto actualizaContacto(Contacto contacto) {
+		return repository.saveAndFlush(contacto);
 	}
 	
 }
